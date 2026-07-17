@@ -1,0 +1,38 @@
+# Changelog
+
+All notable changes to the Ozubulu Digital Platform will be documented in this file.
+
+The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/), and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html) once a first public release is tagged.
+
+## [Unreleased]
+
+### Added
+
+* Project `README.md` describing the vision, mission, guiding principles, Version 1 scope, technology stack, architecture, and repository structure.
+* `CONTRIBUTING.md` summarizing how to contribute and linking to the full Contributor Guide.
+* Core documentation set under `docs/`:
+  * [Product Vision](docs/01-product-vision.md)
+  * [Editorial Policy](docs/02-editorial-policy.md)
+  * [Governance Charter](docs/03-governance-charter.md)
+  * [Content Standards Guide](docs/04-content-standards.md)
+  * [Contributor Guide](docs/05-contributor-guide.md)
+  * [Information Architecture](docs/06-information-architecture.md)
+  * [Content Model](docs/07-content-model.md)
+  * [System Architecture](docs/08-system-architecture.md)
+  * [Database Design](docs/09-database-design.md)
+  * [Roadmap](docs/10-roadmap.md)
+* Architecture Decision Records under `docs/architecture-decision-records/`:
+  * ADR-001 — Documentation Before Implementation
+  * ADR-002 — Use Next.js as the Frontend Framework
+  * ADR-003 — Use Sanity as the Content Management System
+  * ADR-004 — Separate Published Content from Operational Data
+  * ADR-005 — Community Contributions Require Editorial Review
+* Design Language & Design System under `docs/design-system-and-design-languge/`, with an index README and four parts: Foundation (colour, typography, spacing, layout), Components, Experience, and Slow Design Philosophy.
+* MIT `LICENSE`.
+
+### Changed
+
+* Moved the Slow Design Philosophy doc from `docs/11-slow-design.md` into `docs/design-system-and-design-languge/04-slow-design.md`, alongside the rest of the design system it underpins.
+* Introduced **Ozubulu Digital Archive** as the public brand name, distinct from **Ozubulu Digital Platform** (the internal project name used throughout the codebase and documentation). Added the brand statement — "Preserving the history, heritage, and stories of Ozubulu for generations to come." — to the top of the README for consistent reuse across the website and social profiles.
+
+[Unreleased]: https://github.com/tochukwunwosa/ozubulu-platform/commits/main
