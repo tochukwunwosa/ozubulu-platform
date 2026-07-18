@@ -6,6 +6,8 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/),
 
 ## [Unreleased]
 
+## [0.1.0-foundation] - 2026-07-18
+
 ### Added
 
 * Project `README.md` describing the vision, mission, guiding principles, Version 1 scope, technology stack, architecture, and repository structure.
@@ -39,7 +41,7 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/),
   * GitHub Actions CI workflow running lint, typecheck, and build on every push and pull request.
   * Prettier, Husky, and lint-staged to keep formatting and lint checks consistent on commit.
 * First production deployment, live at [ozubulu-platform.vercel.app](https://ozubulu-platform.vercel.app/), connected via Vercel's GitHub integration (Root Directory `apps/web`, Framework Preset Next.js).
-* Documented GitHub ruleset definitions under `.github/rulesets/`: a relaxed ruleset for `dev` (linear history, no force-push/deletion, no required PR) and a strict one for `main` (required PR, required `ci` status check, linear history).
+* Documented GitHub ruleset definitions under `.github/rulesets/`: a relaxed ruleset for `dev` (linear history, no force-push/deletion, PR required with an owner bypass) and a strict one for `main` (required PR, required `ci` status check, linear history, no bypass).
 
 ### Fixed
 
@@ -51,5 +53,6 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/),
 * Introduced **Ozubulu Digital Archive** as the public brand name, distinct from **Ozubulu Digital Platform** (the internal project name used throughout the codebase and documentation). Added the brand statement — "Preserving the history, heritage, and stories of Ozubulu for generations to come." — to the top of the README for consistent reuse across the website and social profiles.
 * Renamed the Supabase env var from `NEXT_PUBLIC_SUPABASE_ANON_KEY` to `NEXT_PUBLIC_SUPABASE_PUBLISHABLE_KEY`, matching Supabase's newer API key naming (publishable/secret, replacing legacy anon/service_role).
 
-[Unreleased]: https://github.com/tochukwunwosa/ozubulu-platform/commits/main
+[Unreleased]: https://github.com/tochukwunwosa/ozubulu-platform/compare/v0.1.0-foundation...dev
+[0.1.0-foundation]: https://github.com/tochukwunwosa/ozubulu-platform/releases/tag/v0.1.0-foundation
 
