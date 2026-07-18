@@ -288,6 +288,172 @@ Layouts should adapt gracefully without hiding important content.
 
 ---
 
+# Typography
+
+Typography should prioritise readability over decoration.
+
+The platform should feel like reading a well-produced book, journal, or historical archive.
+
+Every typographic decision should make long-form reading comfortable while reinforcing the identity of the Ozubulu Digital Archive.
+
+---
+
+## Typeface Selection
+
+### Primary Typeface — Inter
+
+Inter is the primary typeface used throughout the platform.
+
+**Used for:**
+
+* Body text
+* Navigation
+* Buttons
+* Forms
+* Metadata
+* Tables
+* User interface elements
+
+**Reasons:**
+
+* Excellent readability on digital screens
+* Optimised for user interfaces
+* Neutral and unobtrusive
+* Wide language support
+* Comfortable for readers of all ages
+
+---
+
+### Secondary Typeface — Lora
+
+Lora is the secondary typeface used to introduce warmth, heritage, and elegance.
+
+It should be used sparingly to create emphasis rather than throughout the interface.
+
+**Used for:**
+
+* Hero headings
+* Page titles
+* Historical article titles
+* Feature section headings
+* Editorial introductions
+* Pull quotes
+* Important quotations
+
+**Reasons:**
+
+* Elegant serif with a literary character
+* Reflects history and heritage
+* Pairs naturally with Inter
+* Reinforces the identity of a trusted digital archive
+
+---
+
+# Typography Hierarchy
+
+| Element         | Typeface | Weight |
+| --------------- | -------- | -----: |
+| Hero Heading    | Lora     |    700 |
+| Page Title      | Lora     |    700 |
+| Section Heading | Lora     |    600 |
+| Subheading      | Inter    |    600 |
+| Body Text       | Inter    |    400 |
+| Navigation      | Inter    |    500 |
+| Buttons         | Inter    |    600 |
+| Form Labels     | Inter    |    500 |
+| Metadata        | Inter    |    400 |
+| Captions        | Inter    |    400 |
+| Tables          | Inter    |    400 |
+
+---
+
+# Type Scale
+
+The platform follows a consistent, responsive type scale.
+
+| Token      |            Size |
+| ---------- | --------------: |
+| Display    |     4rem (64px) |
+| H1         |     3rem (48px) |
+| H2         |  2.25rem (36px) |
+| H3         | 1.875rem (30px) |
+| H4         |   1.5rem (24px) |
+| H5         |  1.25rem (20px) |
+| Body Large | 1.125rem (18px) |
+| Body       |     1rem (16px) |
+| Small      | 0.875rem (14px) |
+| Caption    |  0.75rem (12px) |
+
+The scale should adapt responsively across mobile, tablet, and desktop devices while maintaining visual hierarchy.
+
+---
+
+# Line Height
+
+Comfortable reading is essential for historical and educational content.
+
+| Element   | Line Height |
+| --------- | ----------: |
+| Headings  |         1.2 |
+| Body Text |         1.7 |
+| Captions  |         1.5 |
+
+The generous line height for body text improves readability during long reading sessions.
+
+---
+
+# Letter Spacing
+
+Typography should remain clean and balanced.
+
+| Element                | Letter Spacing |
+| ----------------------- | --------------: |
+| Hero Heading           |        -0.03em |
+| Page Title             |        -0.02em |
+| Body Text              |         Normal |
+| Buttons                |        +0.01em |
+| Small Uppercase Labels |        +0.08em |
+
+Letter spacing should be subtle and never compromise readability.
+
+---
+
+# Responsive Typography
+
+Typography should scale gracefully across devices.
+
+* **Mobile:** Display typography scales down to approximately H2.
+* **Tablet:** Display typography scales down to approximately H1.
+* **Desktop:** Full typography scale is used.
+
+The goal is to preserve hierarchy without overwhelming smaller screens.
+
+---
+
+# Accessibility
+
+Typography should remain readable for every visitor.
+
+The platform should follow these standards:
+
+* Minimum body text size of **16px**
+* Comfortable reading width of **60–75 characters**
+* Avoid long headings written entirely in uppercase
+* Maintain sufficient colour contrast between text and background
+* Use semantic heading levels throughout the interface
+
+Accessibility is a design requirement, not an enhancement.
+
+---
+
+# Guiding Principle
+
+Typography should never compete with the stories it presents.
+
+Its purpose is to make reading effortless, create visual rhythm, and allow the history, culture, and people of Ozubulu to remain the centre of attention.
+
+---
+
 # Guiding Principle
 
 Good design should feel effortless.

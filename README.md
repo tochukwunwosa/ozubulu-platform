@@ -219,6 +219,25 @@ See the [Editorial Policy](docs/02-editorial-policy.md) and [Content Standards G
 
 ---
 
+## Current Sprint
+
+### Sprint 1 — Foundation
+
+**Milestone:** Phase 2 — Website Foundation
+
+**Status:** In progress
+
+#### Progress
+
+* ✅ Documentation
+* 🚧 Project Setup
+* ⏳ Homepage
+* ⏳ CMS
+
+See the [Roadmap](docs/10-roadmap.md) for how this sprint fits into the wider release plan.
+
+---
+
 ## Roadmap
 
 ### Phase 1
