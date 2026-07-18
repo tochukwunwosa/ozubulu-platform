@@ -1,5 +1,12 @@
 # Ozubulu Digital Archive
 
+[![Release](https://img.shields.io/github/v/release/tochukwunwosa/ozubulu-platform?include_prereleases)](https://github.com/tochukwunwosa/ozubulu-platform/releases)
+[![License: MIT](https://img.shields.io/github/license/tochukwunwosa/ozubulu-platform)](LICENSE)
+[![Next.js](https://img.shields.io/badge/Next.js-16-black?logo=next.js)](https://nextjs.org)
+[![TypeScript](https://img.shields.io/badge/TypeScript-5-3178C6?logo=typescript&logoColor=white)](https://www.typescriptlang.org/)
+[![CI](https://github.com/tochukwunwosa/ozubulu-platform/actions/workflows/ci.yml/badge.svg)](https://github.com/tochukwunwosa/ozubulu-platform/actions/workflows/ci.yml)
+[![Vercel](https://img.shields.io/github/deployments/tochukwunwosa/ozubulu-platform/production?label=vercel&logo=vercel&logoColor=white)](https://ozubulu-platform.vercel.app/)
+
 > Preserving the history, heritage, and stories of Ozubulu for generations to come.
 
 **Project Name:** Ozubulu Digital Platform
