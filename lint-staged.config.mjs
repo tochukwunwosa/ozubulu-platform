@@ -13,5 +13,5 @@ const buildEslintCommand = (filenames) => {
 export default {
   "apps/web/**/*.{js,jsx,ts,tsx}": [buildEslintCommand, "prettier --write"],
   "apps/web/**/*.{json,css}": "prettier --write",
-  "*.{json,yml,yaml}": "prettier --write",
+  "!(pnpm-lock).{json,yml,yaml}": "prettier --write",
 };
