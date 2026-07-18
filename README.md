@@ -109,6 +109,7 @@ Sanity stores:
 
 * Communities
 * Villages
+* Traditional Institutions
 * People
 * Historical Articles
 * Photographs
