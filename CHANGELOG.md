@@ -36,3 +36,4 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/),
 * Introduced **Ozubulu Digital Archive** as the public brand name, distinct from **Ozubulu Digital Platform** (the internal project name used throughout the codebase and documentation). Added the brand statement — "Preserving the history, heritage, and stories of Ozubulu for generations to come." — to the top of the README for consistent reuse across the website and social profiles.
 
 [Unreleased]: https://github.com/tochukwunwosa/ozubulu-platform/commits/main
+

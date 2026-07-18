@@ -1,0 +1,195 @@
+@import "tailwindcss";
+@import "tw-animate-css";
+@import "shadcn/tailwind.css";
+
+@custom-variant dark (&:is(.dark *));
+
+@theme inline {
+  /* Ozubulu palette — docs/design-system-and-design-languge/01-foundation-design-language.md */
+  --color-uli-ink: var(--uli-ink);
+  --color-camwood: var(--camwood);
+  --color-cassava-leaf: var(--cassava-leaf);
+  --color-palm-gold: var(--palm-gold);
+  --color-akpu-paper: var(--akpu-paper);
+  --color-riverstone: var(--riverstone);
+  --color-linen-white: var(--linen-white);
+  --color-soft-clay: var(--soft-clay);
+  --color-mist-grey: var(--mist-grey);
+  --color-forest-shade: var(--forest-shade);
+  --color-bronze-heritage: var(--bronze-heritage);
+
+  /* shadcn semantic tokens, remapped onto the Ozubulu palette */
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-sidebar-ring: var(--sidebar-ring);
+  --color-sidebar-border: var(--sidebar-border);
+  --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
+  --color-sidebar-accent: var(--sidebar-accent);
+  --color-sidebar-primary-foreground: var(--sidebar-primary-foreground);
+  --color-sidebar-primary: var(--sidebar-primary);
+  --color-sidebar-foreground: var(--sidebar-foreground);
+  --color-sidebar: var(--sidebar);
+  --color-chart-5: var(--chart-5);
+  --color-chart-4: var(--chart-4);
+  --color-chart-3: var(--chart-3);
+  --color-chart-2: var(--chart-2);
+  --color-chart-1: var(--chart-1);
+  --color-ring: var(--ring);
+  --color-input: var(--input);
+  --color-border: var(--border);
+  --color-destructive: var(--destructive);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-accent: var(--accent);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-muted: var(--muted);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-secondary: var(--secondary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-primary: var(--primary);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-popover: var(--popover);
+  --color-card-foreground: var(--card-foreground);
+  --color-card: var(--card);
+  --radius-sm: calc(var(--radius) * 0.6);
+  --radius-md: calc(var(--radius) * 0.8);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) * 1.4);
+  --radius-2xl: calc(var(--radius) * 1.8);
+  --radius-3xl: calc(var(--radius) * 2.2);
+  --radius-4xl: calc(var(--radius) * 2.6);
+
+  /* Fonts */
+  --font-sans: var(--font-inter);
+  --font-serif: var(--font-lora);
+  --font-heading: var(--font-lora);
+
+  /* Type scale */
+  --text-display: 4rem;
+  --text-display--line-height: 1.2;
+  --text-h1: 3rem;
+  --text-h1--line-height: 1.2;
+  --text-h2: 2.25rem;
+  --text-h2--line-height: 1.2;
+  --text-h3: 1.875rem;
+  --text-h3--line-height: 1.2;
+  --text-h4: 1.5rem;
+  --text-h4--line-height: 1.2;
+  --text-h5: 1.25rem;
+  --text-h5--line-height: 1.2;
+  --text-body-lg: 1.125rem;
+  --text-body-lg--line-height: 1.7;
+  --text-body: 1rem;
+  --text-body--line-height: 1.7;
+  --text-small: 0.875rem;
+  --text-small--line-height: 1.5;
+  --text-caption: 0.75rem;
+  --text-caption--line-height: 1.5;
+
+  /* Letter spacing */
+  --tracking-hero: -0.03em;
+  --tracking-page-title: -0.02em;
+  --tracking-button: 0.01em;
+  --tracking-label: 0.08em;
+}
+
+:root {
+  /* Ozubulu primary palette */
+  --uli-ink: #1b2436;
+  --camwood: #9c4b32;
+  --cassava-leaf: #3d5c3e;
+  --palm-gold: #c79a3d;
+  --akpu-paper: #f1ede0;
+  --riverstone: #6b6b63;
+
+  /* Ozubulu supporting palette */
+  --linen-white: #faf8f2;
+  --soft-clay: #d7cfc2;
+  --mist-grey: #e8e4dc;
+  --forest-shade: #2f4632;
+  --bronze-heritage: #8b6a3e;
+
+  --background: var(--akpu-paper);
+  --foreground: var(--uli-ink);
+  --card: var(--linen-white);
+  --card-foreground: var(--uli-ink);
+  --popover: var(--linen-white);
+  --popover-foreground: var(--uli-ink);
+  --primary: var(--camwood);
+  --primary-foreground: var(--linen-white);
+  --secondary: var(--mist-grey);
+  --secondary-foreground: var(--uli-ink);
+  --muted: var(--mist-grey);
+  --muted-foreground: var(--riverstone);
+  --accent: var(--palm-gold);
+  --accent-foreground: var(--uli-ink);
+  --destructive: oklch(0.577 0.245 27.325);
+  --border: var(--soft-clay);
+  --input: var(--soft-clay);
+  --ring: var(--camwood);
+  --chart-1: var(--camwood);
+  --chart-2: var(--cassava-leaf);
+  --chart-3: var(--palm-gold);
+  --chart-4: var(--bronze-heritage);
+  --chart-5: var(--riverstone);
+  --radius: 0.625rem;
+  --sidebar: var(--linen-white);
+  --sidebar-foreground: var(--uli-ink);
+  --sidebar-primary: var(--camwood);
+  --sidebar-primary-foreground: var(--linen-white);
+  --sidebar-accent: var(--mist-grey);
+  --sidebar-accent-foreground: var(--uli-ink);
+  --sidebar-border: var(--soft-clay);
+  --sidebar-ring: var(--camwood);
+}
+
+/*
+  Dark mode is not specified in the design language doc (it documents a
+  light-first archive experience). This is a reasonable extrapolation from
+  the existing palette, not a documented spec — revisit once/if dark mode
+  is formally designed.
+*/
+.dark {
+  --background: var(--uli-ink);
+  --foreground: var(--akpu-paper);
+  --card: var(--forest-shade);
+  --card-foreground: var(--akpu-paper);
+  --popover: var(--forest-shade);
+  --popover-foreground: var(--akpu-paper);
+  --primary: var(--camwood);
+  --primary-foreground: var(--linen-white);
+  --secondary: oklch(0.27 0.02 255);
+  --secondary-foreground: var(--akpu-paper);
+  --muted: oklch(0.27 0.02 255);
+  --muted-foreground: var(--soft-clay);
+  --accent: var(--palm-gold);
+  --accent-foreground: var(--uli-ink);
+  --destructive: oklch(0.704 0.191 22.216);
+  --border: oklch(1 0 0 / 12%);
+  --input: oklch(1 0 0 / 15%);
+  --ring: var(--palm-gold);
+  --chart-1: var(--camwood);
+  --chart-2: var(--cassava-leaf);
+  --chart-3: var(--palm-gold);
+  --chart-4: var(--bronze-heritage);
+  --chart-5: var(--soft-clay);
+  --sidebar: var(--forest-shade);
+  --sidebar-foreground: var(--akpu-paper);
+  --sidebar-primary: var(--camwood);
+  --sidebar-primary-foreground: var(--linen-white);
+  --sidebar-accent: oklch(0.27 0.02 255);
+  --sidebar-accent-foreground: var(--akpu-paper);
+  --sidebar-border: oklch(1 0 0 / 12%);
+  --sidebar-ring: var(--palm-gold);
+}
+
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
+  }
+  body {
+    @apply bg-background text-foreground;
+  }
+  html {
+    @apply font-sans;
+  }
+}
