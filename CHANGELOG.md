@@ -29,6 +29,15 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/),
   * ADR-005 — Community Contributions Require Editorial Review
 * Design Language & Design System under `docs/design-system-and-design-languge/`, with an index README and four parts: Foundation (colour, typography, spacing, layout), Components, Experience, and Slow Design Philosophy.
 * MIT `LICENSE`.
+* Week 1 Foundation Sprint — the platform's first running application, in a pnpm workspace under `apps/web`:
+  * Next.js 16 (App Router) with TypeScript, Tailwind CSS v4, and ESLint.
+  * Tailwind design tokens implementing the Ozubulu colour palette (Camwood, Uli Ink, Cassava Leaf, Palm Gold, Akpu Paper, Riverstone, and supporting colours) and the full type scale, typography hierarchy, line-height, and letter-spacing system from the Design Language doc.
+  * Inter and Lora fonts loaded via `next/font`.
+  * shadcn/ui component library: Button, Card, Badge, Sheet, Dropdown Menu, Navigation Menu, Input, Textarea, Form, Separator, and Skeleton.
+  * Sanity Studio embedded at `/studio` and a Supabase client helper under `lib/`, both connected to live projects (Sanity project `Ozubulu Digital Archive`, dataset `production`; Supabase project on the free plan).
+  * `.env.example` documenting the required Sanity and Supabase environment variables.
+  * GitHub Actions CI workflow running lint, typecheck, and build on every push and pull request.
+  * Prettier, Husky, and lint-staged to keep formatting and lint checks consistent on commit.
 
 ### Changed
 
