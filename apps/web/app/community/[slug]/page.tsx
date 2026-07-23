@@ -13,11 +13,9 @@ import {
   CardTitle,
 } from "@/components/ui/card";
 import { getClient } from "@/lib/sanity/client";
-import {
-  communitiesListQuery,
-  communityBySlugQuery,
-} from "@/lib/sanity/queries";
-import type { CommunityPageData, CommunitySummary } from "@/lib/sanity/types";
+import { getCommunitiesList } from "@/lib/sanity/fetchers";
+import { communityBySlugQuery } from "@/lib/sanity/queries";
+import type { CommunityPageData } from "@/lib/sanity/types";
 
 export default async function CommunityPage({
   params,
@@ -25,10 +23,11 @@ export default async function CommunityPage({
   params: Promise<{ slug: string }>;
 }) {
   const { slug } = await params;
-  const client = getClient();
   const [community, allCommunities] = await Promise.all([
-    client.fetch<CommunityPageData | null>(communityBySlugQuery, { slug }),
-    client.fetch<CommunitySummary[]>(communitiesListQuery),
+    getClient().fetch<CommunityPageData | null>(communityBySlugQuery, {
+      slug,
+    }),
+    getCommunitiesList(),
   ]);
 
   if (!community) {

@@ -5,9 +5,7 @@ import "./globals.css";
 import { PreviewBanner } from "@/components/layout/preview-banner";
 import { SiteFooter } from "@/components/layout/site-footer";
 import { SiteHeader } from "@/components/layout/site-header";
-import { getClient } from "@/lib/sanity/client";
-import { communitiesListQuery } from "@/lib/sanity/queries";
-import type { CommunitySummary } from "@/lib/sanity/types";
+import { getCommunitiesList } from "@/lib/sanity/fetchers";
 
 const inter = Inter({
   variable: "--font-inter",
@@ -30,8 +28,7 @@ export default async function RootLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
-  const communities =
-    await getClient().fetch<CommunitySummary[]>(communitiesListQuery);
+  const communities = await getCommunitiesList();
 
   return (
     <html
