@@ -115,6 +115,8 @@ When disagreements arise:
 
 The platform exists to preserve history, not to settle disputes.
 
+Questions that have been actively investigated and still cannot be answered are kept internally in the [Open Questions Register](11-open-questions-register.md), so the same dead ends aren't re-investigated from scratch and the real limits of what we currently know stay visible to the team.
+
 ## Privacy Policy
 
 We respect personal privacy. We will not publish:

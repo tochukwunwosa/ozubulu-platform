@@ -16,6 +16,7 @@ Anything that deserves its own page should have its own content type. Examples i
 
 * Community
 * Village
+* Traditional Institution
 * Person
 * Historical Article
 * Photograph
@@ -47,6 +48,7 @@ Sanity stores published content. It is responsible for:
 
 * Communities
 * Villages
+* Traditional Institutions
 * People
 * Historical Articles
 * Photographs
@@ -98,6 +100,7 @@ Represents one of the recognised communities within Ozubulu. Examples include:
 A Community may contain many:
 
 * Villages
+* Traditional Institutions
 * Historical Articles
 * Photographs
 
@@ -125,6 +128,7 @@ Represents a village within Ozubulu. Every village should eventually have its ow
 
 A Village belongs to one Community. A Village may reference:
 
+* Traditional Institution
 * People
 * Historical Articles
 * Photographs
@@ -133,6 +137,40 @@ A Village belongs to one Community. A Village may reference:
 **Implementation Note**
 
 Before making the Community field mandatory, historical records should confirm that every village belongs to a recognised community without dispute. If legitimate historical uncertainty exists, the relationship may remain optional until resolved.
+
+## Traditional Institution
+
+Represents a traditional ruling or cultural institution connected to Ozubulu — for example, a monarchy, chieftaincy, or council of elders. The Traditional Institution is treated as a first-class entity rather than an article because it carries structured relationships (leadership, offices, affiliated villages) that prose alone cannot represent cleanly.
+
+**Fields**
+
+* Name
+* Slug
+* Overview
+* History
+* Leadership
+* Communities
+* Villages
+* Featured Image
+* Gallery
+* Sources
+* Verification Status
+* Last Updated
+
+**Relationships**
+
+A Traditional Institution may reference:
+
+* Communities
+* Villages
+* People (titleholders, leadership)
+* Historical Articles
+* Photographs
+* Sources
+
+**Implementation Note**
+
+Keep Version 1 minimal: Leadership can be a simple reference list to Person profiles (with a title/role label) rather than a fully modelled office/succession system. Offices, symbols, and ceremonial events can be layered on in a later version once real content surfaces what structure is actually needed.
 
 ## Person
 
@@ -156,6 +194,7 @@ Represents an individual connected to Ozubulu. Examples include:
 * Occupation
 * Community
 * Village
+* Traditional Institution (optional, with Title/Role)
 * Living Status
 * Consent Obtained
 * Visibility
@@ -210,6 +249,7 @@ Version 1 articles may reference:
 
 * Community
 * Village
+* Traditional Institution
 * Person
 * Photograph
 * Source
@@ -237,6 +277,7 @@ A photograph may be linked to:
 
 * Community
 * Village
+* Traditional Institution
 * Person
 * Historical Article
 
@@ -267,6 +308,7 @@ Every important historical claim should be supported by one or more Sources when
 * Academic Research
 * Personal Archive
 * Oral Tradition
+* Website
 
 One Source may support many Communities, Villages, People, and Historical Articles.
 
@@ -316,6 +358,7 @@ Each content type has its own route namespace. Examples:
 
 * `/communities/[slug]`
 * `/villages/[slug]`
+* `/institutions/[slug]`
 * `/people/[slug]`
 * `/articles/[slug]`
 

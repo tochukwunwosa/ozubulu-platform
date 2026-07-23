@@ -98,6 +98,7 @@ Represents one of the recognised communities within Ozubulu.
 Community references:
 
 * Villages
+* Traditional Institutions
 * Historical Articles
 * Photographs
 
@@ -125,10 +126,47 @@ Community references:
 Village references:
 
 * Community
+* Traditional Institution
 * People
 * Historical Articles
 * Photographs
 * Sources
+
+---
+
+## Traditional Institution
+
+Represents a traditional ruling or cultural institution connected to Ozubulu (monarchy, chieftaincy, council of elders). Treated as a first-class entity — it carries structured relationships (leadership, affiliated villages) rather than being prose-only content.
+
+### Key Fields
+
+* name
+* slug
+* overview
+* history
+* leadership[]
+* communities[]
+* villages[]
+* featuredImage
+* gallery[]
+* verificationStatus
+* sources[]
+* updatedAt
+
+### References
+
+Traditional Institution references:
+
+* Communities
+* Villages
+* People (titleholders, via leadership[])
+* Historical Articles
+* Photographs
+* Sources
+
+### Implementation Note
+
+Keep `leadership[]` minimal for Version 1 — a reference to Person plus a title/role string. Defer offices, symbols, and succession history until real content shows what structure is needed.
 
 ---
 
@@ -143,6 +181,8 @@ Village references:
 * occupation
 * village
 * community
+* traditionalInstitution
+* title
 * livingStatus
 * consentObtained
 * visibility
@@ -177,6 +217,7 @@ May reference:
 
 * Community
 * Village
+* Traditional Institution
 * Person
 * Photograph
 * Source
@@ -202,6 +243,7 @@ May reference:
 
 * Community
 * Village
+* Traditional Institution
 * Person
 * Historical Article
 
@@ -232,6 +274,7 @@ May reference:
 * Academic Research
 * Personal Archive
 * Oral Tradition
+* Website
 
 ---
 
@@ -262,6 +305,7 @@ Examples:
 ```text
 /communities/egbema
 /villages/nnukwu-egbema
+/institutions/igwe-in-council
 /people/john-doe
 /articles/history-of-ozubulu
 ```
