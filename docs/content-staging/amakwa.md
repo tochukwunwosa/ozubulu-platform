@@ -2,25 +2,14 @@
 
 Source: provided by Tochukwu Nwosa in conversation, 2026-07-18. No formal citation attached yet — verify before entering.
 
-Community-level facts (Description/History) were entered into `production` on 2026-07-18 as Oral Tradition. See `community.amakwa`. Everything below is still pending.
+Community-level facts (Description/History) were entered into `production` on 2026-07-18 as Oral Tradition. See `community.amakwa`. The 5 kindred villages (Ezi-Amakwa, Umudezim, Umuowelle, Okwutu, Umuezekwe Ofufe) were entered into `production` on 2026-07-20 as Oral Tradition — name/slug/community reference only; meaning, history, and geography are still unwritten and can be added later per village. Everything below is still pending.
 
-## Villages (kindreds / Umuumunna, under Amakwa)
-
-- Ezi-Amakwa
-- Umudezim
-- Umuowelle
-- Okwutu
-- Umuezekwe Ofufe
-
-## Traditional Institution — Obi-In-Council
-
-The town's supreme ruling council: Ndi-Ichie (elders), titled men, and Agbalanze, who advise the king to ensure consensus and order. Community: Amakwa (or Ozubulu-wide — confirm scope before entering).
+Traditional Institution "Obi-In-Council" (Ozubulu-wide scope — confirmed) and Person stubs for the 4 current Obis (incl. HRH Igwe Fidelis Nnamdi Oruche) were entered into `production` on 2026-07-20. See `traditionalInstitution.obiInCouncil`. The Person stubs have occupation/community only — full biographies belong to the People phase.
 
 ## People
 
-- **Ezeifeukwu Oruche I** — Obi of Amakwa; collaborated with Edward Nnubia Anadu on the introduction of Christianity to the area in 1904. Living status: deceased (historical). Consent not applicable (deceased) — confirm per Living Persons Policy before publishing regardless.
+- **Ezeifeukwu Oruche I** — Obi of Amakwa; collaborated with Edward Nnubia Anadu on the introduction of Christianity to the area in 1904. Living status: deceased (historical). Consent not applicable (deceased) — confirm per Living Persons Policy before publishing regardless. Shares the "Oruche" surname with current Igwe Fidelis Nnamdi Oruche (`person.fidelis-nnamdi-oruche`, already entered as a stub) — confirm whether/how they're related (same dynasty vs. coincidence) before writing his biography or asserting any lineage link.
 - **Edward Nnubia Anadu** — Paramount Chief; same collaboration, 1904.
-- **HRH Igwe Fidelis Nnamdi Oruche** — per web research (Ozubulu-USA/Wikipedia corroboration, see `egbema.md`/`eziora.md`/`nza.md` sourcing), the current Igwe/Obi of Ozubulu overall, from the Amakwa lineage. Shares the "Oruche" surname with the historical Ezeifeukwu Oruche I above — confirm whether/how they're related (same dynasty vs. coincidence) before entering either as a Person.
 
 ## Historical Articles
 

@@ -191,6 +191,7 @@ Key documents include:
 * [System Architecture](docs/08-system-architecture.md)
 * [Database Design](docs/09-database-design.md)
 * [Roadmap](docs/10-roadmap.md)
+* [Open Questions Register](docs/11-open-questions-register.md)
 * [Architecture Decision Records (ADRs)](docs/architecture-decision-records/README.md)
 * [Design Language & Design System](docs/design-system-and-design-languge/README.md) (includes the [Slow Design Philosophy](docs/design-system-and-design-languge/04-slow-design.md))
 

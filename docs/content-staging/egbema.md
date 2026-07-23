@@ -4,7 +4,4 @@ Source: web research (Ozubulu-USA, Wikipedia), 2026-07-18. See `source.ozubuluUs
 
 Community-level facts (Description/History) were entered into `production` on 2026-07-18 as Single Source. See `community.egbema`. Everything below is still pending.
 
-## Traditional Institution / People
-
-- Current Obi of Egbema: **HRH Sylvester O. Ilona** — titles Eze-Enyidunobi, Obi of Egbema.
-- Belongs to the same Obi-In-Council structure noted in `amakwa.md`.
+Current Obi of Egbema, **HRH Sylvester O. Ilona** (Eze-Enyidunobi), was entered as a Person stub and added to the `traditionalInstitution.obiInCouncil` leadership on 2026-07-20 (occupation/community only — full biography belongs to the People phase).
