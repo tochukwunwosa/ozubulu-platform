@@ -62,6 +62,17 @@ export function SiteHeader({
           Ozubulu Digital Archive
         </Link>
         <nav className="flex items-center gap-2">
+          <Button
+            asChild
+            variant="ghost"
+            size="sm"
+            className={cn(
+              overlay &&
+                "text-linen-white hover:bg-linen-white/10 hover:text-linen-white"
+            )}
+          >
+            <Link href="/town/ozubulu">About Ozubulu</Link>
+          </Button>
           <DropdownMenu>
             <DropdownMenuTrigger asChild>
               <Button
