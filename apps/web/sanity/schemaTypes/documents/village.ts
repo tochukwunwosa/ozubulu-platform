@@ -1,5 +1,6 @@
 import { defineField, defineType } from "sanity";
 
+import { researchStatusField } from "../fields/researchStatus";
 import { verificationStatusField } from "../fields/verificationStatus";
 
 export const village = defineType({
@@ -74,6 +75,7 @@ export const village = defineType({
       of: [{ type: "reference", to: [{ type: "source" }] }],
     }),
     verificationStatusField,
+    researchStatusField,
     defineField({
       name: "updatedAt",
       title: "Last Updated",

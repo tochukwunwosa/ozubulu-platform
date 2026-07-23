@@ -1,5 +1,6 @@
 import { defineField, defineType } from "sanity";
 
+import { researchStatusField } from "../fields/researchStatus";
 import { verificationStatusField } from "../fields/verificationStatus";
 
 const LIVING_STATUS_OPTIONS = [
@@ -110,6 +111,7 @@ export const person = defineType({
       of: [{ type: "reference", to: [{ type: "source" }] }],
     }),
     verificationStatusField,
+    researchStatusField,
   ],
   preview: {
     select: { title: "fullName", subtitle: "occupation" },

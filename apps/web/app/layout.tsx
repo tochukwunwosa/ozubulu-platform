@@ -2,6 +2,13 @@ import type { Metadata } from "next";
 import { Inter, Lora } from "next/font/google";
 import "./globals.css";
 
+import { PreviewBanner } from "@/components/layout/preview-banner";
+import { SiteFooter } from "@/components/layout/site-footer";
+import { SiteHeader } from "@/components/layout/site-header";
+import { getClient } from "@/lib/sanity/client";
+import { communitiesListQuery } from "@/lib/sanity/queries";
+import type { CommunitySummary } from "@/lib/sanity/types";
+
 const inter = Inter({
   variable: "--font-inter",
   subsets: ["latin"],
@@ -18,17 +25,27 @@ export const metadata: Metadata = {
     "Preserving the history, heritage, and stories of Ozubulu for generations to come.",
 };
 
-export default function RootLayout({
+export default async function RootLayout({
   children,
 }: Readonly<{
   children: React.ReactNode;
 }>) {
+  const communities =
+    await getClient().fetch<CommunitySummary[]>(communitiesListQuery);
+
   return (
     <html
       lang="en"
       className={`${inter.variable} ${lora.variable} h-full antialiased`}
     >
-      <body className="min-h-full flex flex-col">{children}</body>
+      <body className="min-h-full flex flex-col">
+        <PreviewBanner />
+        <div className="relative flex flex-1 flex-col">
+          <SiteHeader communities={communities} />
+          {children}
+        </div>
+        <SiteFooter communities={communities} />
+      </body>
     </html>
   );
 }
