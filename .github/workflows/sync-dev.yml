@@ -1,0 +1,39 @@
+name: Sync dev with main
+
+# After every merge into main, fast-forward dev to match. Only ever a
+# fast-forward: git refuses (safely, no-op) if dev has diverged with
+# commits main doesn't have. See docs/03-governance-charter.md and the
+# repo's dev/main branch protection rulesets for the workflow this
+# supports -- dev->main PRs must use "Create a merge commit" (never
+# squash/rebase), which is what keeps this fast-forward always possible.
+
+on:
+  push:
+    branches: [main]
+
+permissions:
+  contents: write
+
+jobs:
+  sync:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+          # Default GITHUB_TOKEN can't bypass dev's "require pull request"
+          # rule (only the Repository admin role can) -- SYNC_PAT is a
+          # personal access token with Contents: write on this repo,
+          # authenticating as the repo owner so the bypass applies.
+          token: ${{ secrets.SYNC_PAT }}
+
+      - name: Fast-forward dev to main
+        run: |
+          git fetch origin main dev
+          if git merge-base --is-ancestor origin/dev origin/main; then
+            git push origin main:dev
+            echo "Fast-forwarded dev to $(git rev-parse --short origin/main)."
+          else
+            echo "dev has commits not on main -- not a fast-forward, skipping."
+          fi
