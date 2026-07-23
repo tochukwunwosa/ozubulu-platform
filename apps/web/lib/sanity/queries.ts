@@ -40,3 +40,61 @@ export const communityBySlugQuery = groq`
   }, [])
 }
 `;
+
+export const townBySlugQuery = groq`
+*[_type == "town" && slug.current == $slug][0]{
+  _id,
+  name,
+  overview,
+  historicalSummary,
+  geography,
+  verificationStatus,
+  researchStatus,
+  updatedAt,
+  "communities": communities[]-> {
+    _id,
+    name,
+    "slug": slug.current,
+    description
+  },
+  "featuredArticles": featuredArticles[]-> {
+    _id,
+    title,
+    "slug": slug.current,
+    summary,
+    verificationStatus,
+    researchStatus
+  },
+  "sources": coalesce(sources[]-> {
+    _id,
+    title,
+    author,
+    sourceType
+  }, [])
+}
+`;
+
+export const historicalArticleBySlugQuery = groq`
+*[_type == "historicalArticle" && slug.current == $slug][0]{
+  _id,
+  title,
+  summary,
+  body,
+  verificationStatus,
+  researchStatus,
+  publishedAt,
+  updatedAt,
+  "communities": communities[]-> {
+    _id,
+    name,
+    "slug": slug.current,
+    description
+  },
+  "sources": coalesce(sources[]-> {
+    _id,
+    title,
+    author,
+    sourceType
+  }, [])
+}
+`;

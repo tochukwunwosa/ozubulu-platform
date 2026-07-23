@@ -45,3 +45,39 @@ export interface CommunityPageData {
   institutions: InstitutionSummary[];
   sources: SourceSummary[];
 }
+
+export interface ArticleSummary {
+  _id: string;
+  title: string;
+  slug: string;
+  summary?: string;
+  verificationStatus?: string;
+  researchStatus?: string;
+}
+
+export interface TownPageData {
+  _id: string;
+  name: string;
+  overview?: string;
+  historicalSummary?: PortableTextBlocks;
+  geography?: string;
+  verificationStatus?: string;
+  researchStatus?: string;
+  updatedAt?: string;
+  communities: CommunitySummary[];
+  featuredArticles: ArticleSummary[];
+  sources: SourceSummary[];
+}
+
+export interface HistoricalArticlePageData {
+  _id: string;
+  title: string;
+  summary?: string;
+  body?: PortableTextBlocks;
+  verificationStatus?: string;
+  researchStatus?: string;
+  publishedAt?: string;
+  updatedAt?: string;
+  communities: CommunitySummary[];
+  sources: SourceSummary[];
+}

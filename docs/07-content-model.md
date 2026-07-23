@@ -14,6 +14,7 @@ The Content Model is designed to preserve the history, culture, institutions, an
 
 Anything that deserves its own page should have its own content type. Examples include:
 
+* Town
 * Community
 * Village
 * Traditional Institution
@@ -46,6 +47,7 @@ The Ozubulu Digital Platform uses two systems.
 
 Sanity stores published content. It is responsible for:
 
+* Town
 * Communities
 * Villages
 * Traditional Institutions
@@ -73,6 +75,39 @@ Operational data supports the platform. Historical content lives in Sanity.
 ## Version 1 Content Types
 
 The following entities will be implemented for Version 1.
+
+## Town
+
+Represents Ozubulu itself -- the root entity above Community. Added 2026-07-23, after real content (a town-wide origin story, geography, and history sourced from a physical book) turned up with nowhere else to live. Deliberately kept lean: it describes what Ozubulu *is* (identity, at-a-glance facts, and links out to the Communities/Traditional Institutions that make it up), while the full narrative content lives in Historical Articles rather than being duplicated here. This also means the model scales cleanly if the platform ever documents a second town.
+
+**Fields**
+
+* Name
+* Igbo Name (optional)
+* Slug
+* Overview
+* Historical Summary (short introduction only -- 2-3 paragraphs; full narratives belong in a Historical Article)
+* Geography Summary (short summary only -- a full write-up belongs in a Historical Article)
+* Communities
+* Traditional Institutions
+* Featured Articles (curated Historical Articles to surface, e.g. Origin of Ozubulu)
+* Featured Image
+* Gallery
+* Sources
+* Verification Status
+* Research Status
+* Last Updated
+
+**Relationships**
+
+A Town references many:
+
+* Communities
+* Traditional Institutions
+* Historical Articles (via Featured Articles)
+* Photographs
+
+For Version 1, there is exactly one Town document (Ozubulu).
 
 ## Community
 
