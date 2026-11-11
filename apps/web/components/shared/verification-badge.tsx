@@ -1,33 +1,39 @@
 import { Badge } from "@/components/ui/badge";
 import { cn } from "@/lib/utils";
 
+// Colours from the homepage design: each label's text passes 4.5:1 contrast
+// on its own tinted background, and colour is never the only signal (the
+// label is always spelled out).
 const STATUS_CONFIG: Record<string, { label: string; className: string }> = {
   verified: {
     label: "Verified",
-    className: "border-cassava-leaf/30 bg-cassava-leaf/10 text-cassava-leaf",
+    className: "border-[#BCCBB8] bg-[#E9EEE4] text-[#3D5C3E]",
   },
   multipleSources: {
     label: "Multiple Sources",
-    className: "border-cassava-leaf/30 bg-cassava-leaf/10 text-cassava-leaf",
+    className: "border-[#BCCBB8] bg-[#E9EEE4] text-[#3D5C3E]",
   },
   singleSource: {
     label: "Single Source",
-    className: "border-palm-gold/40 bg-palm-gold/10 text-bronze-heritage",
+    className: "border-[#DCC59A] bg-[#F4EBD6] text-[#6E5128]",
   },
   oralTradition: {
     label: "Oral Tradition",
-    className:
-      "border-bronze-heritage/30 bg-bronze-heritage/10 text-bronze-heritage",
+    className: "border-[#CDB79A] bg-[#EFE6DA] text-[#6E5128]",
   },
   underReview: {
     label: "Under Review",
-    className: "border-riverstone/30 bg-riverstone/10 text-riverstone",
+    className: "border-[#CFCBC0] bg-[#EDEAE2] text-[#55554E]",
   },
   disputed: {
     label: "Disputed",
-    className: "border-destructive/30 bg-destructive/10 text-destructive",
+    className: "border-[#E2B6AC] bg-[#F6E4DF] text-[#8E2F22]",
   },
 };
+
+export function verificationLabel(status?: string) {
+  return status ? STATUS_CONFIG[status]?.label : undefined;
+}
 
 export function VerificationBadge({ status }: { status?: string }) {
   const config = status ? STATUS_CONFIG[status] : undefined;
@@ -37,7 +43,7 @@ export function VerificationBadge({ status }: { status?: string }) {
     <Badge
       variant="outline"
       className={cn(
-        "h-auto px-2.5 py-1 text-caption tracking-label uppercase",
+        "h-auto rounded-full px-2.5 py-1 text-[0.6875rem] leading-[1.3] font-medium tracking-label uppercase",
         config.className
       )}
     >

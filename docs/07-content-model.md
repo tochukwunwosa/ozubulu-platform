@@ -88,6 +88,9 @@ Represents Ozubulu itself -- the root entity above Community. Added 2026-07-23, 
 * Overview
 * Historical Summary (short introduction only -- 2-3 paragraphs; full narratives belong in a Historical Article)
 * Geography Summary (short summary only -- a full write-up belongs in a Historical Article)
+* Location (optional, at-a-glance)
+* Neighbouring Towns (optional, one or more)
+* Seasons (optional, each with a name and months)
 * Communities
 * Traditional Institutions
 * Featured Articles (curated Historical Articles to surface, e.g. Origin of Ozubulu)
@@ -224,6 +227,7 @@ Represents an individual connected to Ozubulu. Examples include:
 
 * Full Name
 * Igbo Name (optional)
+* Titles (optional, one or more: traditional, chieftaincy or honorary titles)
 * Photograph
 * Biography
 * Occupation

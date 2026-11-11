@@ -193,3 +193,142 @@
     @apply font-sans;
   }
 }
+
+/*
+  Motion — docs/design-system-and-design-languge/03-experience-design-system.md
+  ("gentle fade-ins, smooth transitions, subtle hover effects") and
+  04-slow-design.md. Everything here switches off for visitors who ask their
+  device for reduced motion (block at the end).
+*/
+
+html {
+  scroll-behavior: smooth;
+}
+
+/* Scroll reveal. Elements marked data-reveal fade up as they enter the
+   viewport (components/motion/reveal-observer.tsx). The "js" class is set
+   before first paint, so without JavaScript everything simply shows.
+   It is a one-off animation (fill-mode "backwards"), not a transition, so it
+   never overrides an element's own hover transitions once it has played. */
+@keyframes reveal-up {
+  from {
+    opacity: 0;
+    transform: translateY(24px);
+  }
+}
+@keyframes reveal-fade {
+  from {
+    opacity: 0;
+  }
+}
+@keyframes reveal-scale {
+  from {
+    opacity: 0;
+    transform: scale(0.96);
+  }
+}
+html.js [data-reveal]:not([data-revealed]) {
+  opacity: 0;
+}
+[data-reveal][data-revealed] {
+  animation: reveal-up 0.8s cubic-bezier(0.22, 1, 0.36, 1) backwards;
+  animation-delay: calc(var(--reveal-i, 0) * 90ms);
+}
+[data-reveal="fade"][data-revealed] {
+  animation-name: reveal-fade;
+}
+[data-reveal="scale"][data-revealed] {
+  animation-name: reveal-scale;
+}
+
+/* Hero entrance: each child rises in turn on page load. */
+@keyframes hero-rise {
+  from {
+    opacity: 0;
+    transform: translateY(18px);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+.hero-enter > * {
+  animation: hero-rise 0.9s cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+.hero-enter > :nth-child(1) {
+  animation-delay: 0.15s;
+}
+.hero-enter > :nth-child(2) {
+  animation-delay: 0.3s;
+}
+.hero-enter > :nth-child(3) {
+  animation-delay: 0.45s;
+}
+.hero-enter > :nth-child(4) {
+  animation-delay: 0.6s;
+}
+.hero-enter > :nth-child(5) {
+  animation-delay: 0.75s;
+}
+
+/* Slow drift on the hero video, so the opening feels alive. */
+@keyframes slow-drift {
+  from {
+    transform: scale(1.04) translate3d(0, 0, 0);
+  }
+  to {
+    transform: scale(1.12) translate3d(-1.5%, -1%, 0);
+  }
+}
+.hero-drift {
+  animation: slow-drift 24s ease-in-out infinite alternate;
+}
+
+/* "Begin" scroll cue: a line that draws downwards on a loop. */
+@keyframes cue-draw {
+  0% {
+    transform: scaleY(0);
+    transform-origin: top;
+  }
+  45% {
+    transform: scaleY(1);
+    transform-origin: top;
+  }
+  55% {
+    transform: scaleY(1);
+    transform-origin: bottom;
+  }
+  100% {
+    transform: scaleY(0);
+    transform-origin: bottom;
+  }
+}
+.cue-line {
+  animation: cue-draw 2.4s cubic-bezier(0.65, 0, 0.35, 1) infinite;
+}
+
+/* Timeline markers pop in once their entry is revealed. */
+[data-reveal] .timeline-dot {
+  transition: transform 0.5s cubic-bezier(0.34, 1.56, 0.64, 1) 0.25s;
+}
+html.js [data-reveal]:not([data-revealed]) .timeline-dot {
+  transform: scale(0);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+  html.js [data-reveal]:not([data-revealed]) {
+    opacity: 1;
+    transform: none;
+  }
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    transition-delay: 0s !important;
+  }
+}
