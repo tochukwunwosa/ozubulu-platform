@@ -176,6 +176,7 @@ Keep `leadership[]` minimal for Version 1 — a reference to Person plus a title
 
 * fullName
 * igboName
+* titles[] (optional)
 * slug
 * biography
 * occupation

@@ -32,6 +32,15 @@ export const person = defineType({
       type: "string",
     }),
     defineField({
+      name: "titles",
+      title: "Titles",
+      description:
+        "Traditional, chieftaincy or honorary titles, e.g. Eze-Enyidunobi or Odenigbo IV. Optional. Add as many as apply, pressing Enter after each.",
+      type: "array",
+      of: [{ type: "string" }],
+      options: { layout: "tags" },
+    }),
+    defineField({
       name: "slug",
       title: "Slug",
       type: "slug",
