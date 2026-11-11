@@ -51,6 +51,39 @@ export const town = defineType({
         "A short summary only. A full geography write-up belongs in its own Historical Article.",
       type: "text",
     }),
+    // At-a-glance facts shown in the About page's summary card.
+    defineField({
+      name: "location",
+      title: "Location",
+      description: "e.g. Ekwusigo LGA, Anambra State, Nigeria",
+      type: "string",
+    }),
+    defineField({
+      name: "neighbouringTowns",
+      title: "Neighbouring Towns",
+      description: "Optional. Add each town, pressing Enter after each.",
+      type: "array",
+      of: [{ type: "string" }],
+      options: { layout: "tags" },
+    }),
+    defineField({
+      name: "seasons",
+      title: "Seasons",
+      description: "Optional, e.g. Wet season: April–October.",
+      type: "array",
+      of: [
+        defineField({
+          name: "season",
+          title: "Season",
+          type: "object",
+          fields: [
+            defineField({ name: "name", title: "Name", type: "string" }),
+            defineField({ name: "period", title: "Months", type: "string" }),
+          ],
+          preview: { select: { title: "name", subtitle: "period" } },
+        }),
+      ],
+    }),
     defineField({
       name: "communities",
       title: "Communities",

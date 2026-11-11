@@ -1,10 +1,13 @@
 import type { Metadata } from "next";
 import { Inter, Lora } from "next/font/google";
+import Script from "next/script";
 import "./globals.css";
 
+import { HideOnStudio } from "@/components/layout/hide-on-studio";
 import { PreviewBanner } from "@/components/layout/preview-banner";
 import { SiteFooter } from "@/components/layout/site-footer";
 import { SiteHeader } from "@/components/layout/site-header";
+import { RevealObserver } from "@/components/motion/reveal-observer";
 import { getCommunitiesList } from "@/lib/sanity/fetchers";
 
 const inter = Inter({
@@ -34,14 +37,28 @@ export default async function RootLayout({
     <html
       lang="en"
       className={`${inter.variable} ${lora.variable} h-full antialiased`}
+      // The inline script below adds the "js" class before React hydrates.
+      suppressHydrationWarning
     >
       <body className="min-h-full flex flex-col">
-        <PreviewBanner />
+        {/* Marks JavaScript as available before hydration, so scroll-reveal
+            elements start hidden only when they can actually be revealed. */}
+        <Script id="js-flag" strategy="beforeInteractive">
+          {"document.documentElement.classList.add('js')"}
+        </Script>
+        <RevealObserver />
+        <HideOnStudio>
+          <PreviewBanner />
+        </HideOnStudio>
         <div className="relative flex flex-1 flex-col">
-          <SiteHeader communities={communities} />
+          <HideOnStudio>
+            <SiteHeader communities={communities} />
+          </HideOnStudio>
           {children}
         </div>
-        <SiteFooter communities={communities} />
+        <HideOnStudio>
+          <SiteFooter />
+        </HideOnStudio>
       </body>
     </html>
   );
